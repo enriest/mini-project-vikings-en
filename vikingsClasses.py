@@ -13,12 +13,7 @@ class Soldier:
         return self.strength
     def receiveDamage(self, damage):
         # your code here
-        self.damage = damage
         self.health -= damage
-        # Return a string to match the subclasses' return type
-        return f"Soldier has received {self.damage} points of damage"
-    # Damage is in another class ?
-
 # Viking
 
 class Viking(Soldier):
@@ -31,12 +26,11 @@ class Viking(Soldier):
         # your code here
         return "Odin Owns You All!"
     def receiveDamage(self, damage):
-        self.damage = damage
         # your code here
-        self.health -= self.damage
+        self.health -= damage
         # Return a string to match the subclasses' return type
         if self.health >= 1:
-            return f"{self.name} has received {self.damage} points of damage"
+            return f"{self.name} has received {damage} points of damage"
         else:
             return f"{self.name} has died in act of combat"
 # Saxon
@@ -48,12 +42,11 @@ class Saxon(Soldier):
         self.strength = strength
     def receiveDamage(self, damage): 
         # your code here
-        self.damage = damage
-        self.health -= self.damage
+        self.health -= damage
         if self.health >= 1:
-            return f"A Saxon has received {self.damage} points of damage"
+            return f"A Saxon has received {damage} points of damage"
         else:
-            return f"A Saxon has died in act of combat"
+            return f"A Saxon has died in combat"
 
 # Davicente
 
